@@ -1,0 +1,65 @@
+configuration {
+    font: "Hasklug Nerd Font Medium 12";
+    show-icons: false;
+    disable-history: false;
+}
+
+@theme "/dev/null"
+
+* {
+    bg: #282828;
+    bg-alt: #3c3836;
+    fg: #ebdbb2;
+    fg-alt: #7c6f64;
+    primary: #d79921;
+    
+    background-color: @bg;
+    text-color: @fg;
+}
+
+window {
+    width: 300px;
+    border: 2px;
+    border-color: @primary;
+    border-radius: 6px;
+    padding: 20px;
+}
+
+mainbox {
+    children: [inputbar, listview];
+}
+
+inputbar {
+    children: [prompt];
+    margin: 0px 0px 10px 0px;
+}
+
+prompt {
+    text-color: @primary;
+}
+
+listview {
+    columns: 1;
+    lines: 5;
+    spacing: 5px;
+    cycle: false;
+    dynamic: true;
+    layout: vertical;
+}
+
+element {
+    padding: 10px;
+    border-radius: 4px;
+    text-color: @fg;
+}
+
+element selected {
+    background-color: @bg-alt;
+    text-color: @primary;
+}
+
+element-text {
+    background-color: inherit;
+    text-color: inherit;
+    vertical-align: 0.5;
+}

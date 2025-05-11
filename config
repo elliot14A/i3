@@ -6,12 +6,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 exec --no-startup-id nm-applet
 
-# exec_always --no-startup-id eww daemon
-# exec_always --no-startup-id eww open bar
-
 # Polybar
-exec ~/.config/polybar/launch.sh
-exec feh --bg-scale ~/.config/wallpapers/wallpaper.jpg
+exec ~/.config/i3/polybar/launch.sh
+exec feh --bg-scale ~/.config/i3/wallpapers/wallpaper.jpg
 # exec feh --bg-scale ~/Pictures/GlGEtN5W4AADuqp.jpg
 exec xrandr --output HDMI-1 --auto --right-of eDP-1
 
@@ -142,7 +139,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+q exec ~/.config/rofi/powermenu.sh
+bindsym $mod+Shift+q exec ~/.config/i3/rofi/powermenu.sh
 
 default_border pixel 0
 default_floating_border pixel 0
