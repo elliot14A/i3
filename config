@@ -3,12 +3,13 @@ set $mod Mod4
 font pango:monospace 8
 
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id redshift-gtk
 
 exec --no-startup-id nm-applet
 
 # Polybar
-exec ~/.config/i3/polybar/launch.sh
-exec feh --bg-scale ~/.config/i3/wallpapers/wallpaper.jpg
+exec ~/.config/polybar/launch.sh
+exec feh --bg-scale ~/.config/wallpapers/wallpaper.jpg
 # exec feh --bg-scale ~/Pictures/GlGEtN5W4AADuqp.jpg
 exec xrandr --output HDMI-1 --auto --right-of eDP-1
 
@@ -139,15 +140,15 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+q exec ~/.config/i3/rofi/powermenu.sh
+bindsym $mod+Shift+q exec ~/.config/rofi/powermenu.sh
 
 default_border pixel 0
 default_floating_border pixel 0
 
-# Screenshot bindings
-bindsym Print exec --no-startup-id i3-screenshot full
-bindsym $mod+Print exec --no-startup-id i3-screenshot window
-bindsym Shift+Print exec --no-startup-id i3-screenshot select
+bindsym Print exec --no-startup-id scrot ~/Pictures/scrot_%Y-%m-%d-%T.png
+bindsym $mod+Print exec --no-startup-id scrot --focused ~/Pictures/scrot_%Y-%m-%d-%T.png
+bindsym Shift+Print exec --no-startup-id scrot --select ~/Pictures/scrot_%Y-%m-%d-%T.png
+
 
 gaps outer 0
 gaps inner 4
